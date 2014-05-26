@@ -1,0 +1,110 @@
+<div class="page-header">
+  <h1>Edit Date #<%= @date.id %></h1>
+</div>
+
+<% if @date.errors.any? %>
+  <% @date.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<form action="/update_date/<%= @date.id %>" class="form-horizontal">
+  <!-- Label and input for interest -->
+  <div class="form-group">
+    <label for="interest" class="col-sm-2 control-label">
+      Interest
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="interest" name="interest" placeholder="Interest" class="form-control" value="<%= @date.interest %>">
+    </div>
+  </div>
+
+  <!-- Label and input for preference -->
+  <div class="form-group">
+    <label for="preference" class="col-sm-2 control-label">
+      Preference
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="preference" name="preference" placeholder="Preference" class="form-control" value="<%= @date.preference %>">
+    </div>
+  </div>
+
+  <!-- Label and input for age_range -->
+  <div class="form-group">
+    <label for="age_range" class="col-sm-2 control-label">
+      Age range
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="age_range" name="age_range" placeholder="Age range" class="form-control" value="<%= @date.age_range %>">
+    </div>
+  </div>
+
+  <!-- Label and input for user_id -->
+  <div class="form-group">
+    <label for="user_id" class="col-sm-2 control-label">
+      User
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @date.user_id %>">
+    </div>
+  </div>
+
+  <!-- Label and input for event_id -->
+  <div class="form-group">
+    <label for="event_id" class="col-sm-2 control-label">
+      Event
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="event_id" name="event_id" placeholder="Event" class="form-control" value="<%= @date.event_id %>">
+    </div>
+  </div>
+
+  <!-- Label and input for price -->
+  <div class="form-group">
+    <label for="price" class="col-sm-2 control-label">
+      Price
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="price" name="price" placeholder="Price" class="form-control" value="<%= @date.price %>">
+    </div>
+  </div>
+
+  <!-- Label and input for number_tickets -->
+  <div class="form-group">
+    <label for="number_tickets" class="col-sm-2 control-label">
+      Number tickets
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="number_tickets" name="number_tickets" placeholder="Number tickets" class="form-control" value="<%= @date.number_tickets %>">
+    </div>
+  </div>
+
+  <!-- Label and input for date_time -->
+  <div class="form-group">
+    <label for="date_time" class="col-sm-2 control-label">
+      Date time
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="date_time" name="date_time" placeholder="Date time" class="form-control" value="<%= @date.date_time %>">
+    </div>
+  </div>
+
+  <!-- Label and input for details -->
+  <div class="form-group">
+    <label for="details" class="col-sm-2 control-label">
+      Details
+    </label>
+    <div class="col-sm-10">
+      <textarea id="details" name="details" placeholder="Details" class="form-control" rows="3"><%= @date.details %></textarea>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="submit" value="Update Date" class="btn btn-primary">
+    </div>
+  </div>
+</form>

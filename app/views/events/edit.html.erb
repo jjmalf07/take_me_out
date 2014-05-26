@@ -1,0 +1,50 @@
+<div class="page-header">
+  <h1>Edit Event #<%= @event.id %></h1>
+</div>
+
+<% if @event.errors.any? %>
+  <% @event.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<form action="/update_event/<%= @event.id %>" class="form-horizontal">
+  <!-- Label and input for event_name -->
+  <div class="form-group">
+    <label for="event_name" class="col-sm-2 control-label">
+      Event name
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="event_name" name="event_name" placeholder="Event name" class="form-control" value="<%= @event.event_name %>">
+    </div>
+  </div>
+
+  <!-- Label and input for lng -->
+  <div class="form-group">
+    <label for="lng" class="col-sm-2 control-label">
+      Lng
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="lng" name="lng" placeholder="Lng" class="form-control" value="<%= @event.lng %>">
+    </div>
+  </div>
+
+  <!-- Label and input for lat -->
+  <div class="form-group">
+    <label for="lat" class="col-sm-2 control-label">
+      Lat
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="lat" name="lat" placeholder="Lat" class="form-control" value="<%= @event.lat %>">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="submit" value="Update Event" class="btn btn-primary">
+    </div>
+  </div>
+</form>

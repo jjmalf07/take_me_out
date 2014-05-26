@@ -1,4 +1,59 @@
 Rails.application.routes.draw do
+
+  devise_for :users
+  root 'dates#index'
+
+  # Routes for the Date resource:
+  # CREATE
+  get('/dates/new', { :controller => 'dates', :action => 'new' })
+  get('/create_date', { :controller => 'dates', :action => 'create' })
+
+  # READ
+  get('/dates', { :controller => 'dates', :action => 'index' })
+  get('/dates/:id', { :controller => 'dates', :action => 'show' })
+
+  # UPDATE
+  get('/dates/:id/edit', { :controller => 'dates', :action => 'edit' })
+  get('/update_date/:id', { :controller => 'dates', :action => 'update' })
+
+  # DELETE
+  get('/delete_date/:id', { :controller => 'dates', :action => 'destroy' })
+  #------------------------------
+
+  # Routes for the Match resource:
+  # CREATE
+  get('/matches/new', { :controller => 'matches', :action => 'new' })
+  get('/create_match', { :controller => 'matches', :action => 'create' })
+
+  # READ
+  get('/matches', { :controller => 'matches', :action => 'index' })
+  get('/matches/:id', { :controller => 'matches', :action => 'show' })
+
+  # UPDATE
+  get('/matches/:id/edit', { :controller => 'matches', :action => 'edit' })
+  get('/update_match/:id', { :controller => 'matches', :action => 'update' })
+
+  # DELETE
+  get('/delete_match/:id', { :controller => 'matches', :action => 'destroy' })
+  #------------------------------
+
+  # Routes for the Event resource:
+  # CREATE
+  get('/events/new', { :controller => 'events', :action => 'new' })
+  get('/create_event', { :controller => 'events', :action => 'create' })
+
+  # READ
+  get('/events', { :controller => 'events', :action => 'index' })
+  get('/events/:id', { :controller => 'events', :action => 'show' })
+
+  # UPDATE
+  get('/events/:id/edit', { :controller => 'events', :action => 'edit' })
+  get('/update_event/:id', { :controller => 'events', :action => 'update' })
+
+  # DELETE
+  get('/delete_event/:id', { :controller => 'events', :action => 'destroy' })
+  #------------------------------
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

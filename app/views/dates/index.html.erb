@@ -1,0 +1,56 @@
+<div class="page-header">
+  <h1>Dates</h1>
+</div>
+
+<p><a href="/dates/new" class="btn btn-primary">Add a New Date</a></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Interest</th>
+      <th>Preference</th>
+      <th>Age range</th>
+      <th>User</th>
+      <th>Event</th>
+      <th>Price</th>
+      <th>Number tickets</th>
+      <th>Date time</th>
+      <th>Details</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dates.each do |date| %>
+      <tr>
+        <td><%= date.interest %></td>
+        <td><%= date.preference %></td>
+        <td><%= date.age_range %></td>
+        <td><%= date.user_id %></td>
+        <td><%= date.event_id %></td>
+        <td><%= date.price %></td>
+        <td><%= date.number_tickets %></td>
+        <td><%= date.date_time %></td>
+        <td><%= date.details %></td>
+        <td>
+          <a href="/dates/<%= date.id %>" class="btn btn-primary">
+            <i class="fa fa-search-plus"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/dates/<%= date.id %>/edit" class="btn btn-warning">
+            <i class="fa fa-edit"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/delete_date/<%= date.id %>" class="btn btn-danger">
+            <i class="fa fa-trash-o"></i>
+          </a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
