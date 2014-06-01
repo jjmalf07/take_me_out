@@ -1,0 +1,56 @@
+<div class="page-header">
+  <h1>Userdates</h1>
+</div>
+
+<p><a href="/userdates/new" class="btn btn-primary">Add a New Userdate</a></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Interest</th>
+      <th>Preference</th>
+      <th>Age range</th>
+      <th>User</th>
+      <th>Event</th>
+      <th>Price</th>
+      <th>Number tickets</th>
+      <th>Date time</th>
+      <th>Details</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @userdates.each do |userdate| %>
+      <tr>
+        <td><%= userdate.interest %></td>
+        <td><%= userdate.preference %></td>
+        <td><%= userdate.age_range %></td>
+        <td><%= userdate.user_id %></td>
+        <td><%= userdate.event_id %></td>
+        <td><%= userdate.price %></td>
+        <td><%= userdate.number_tickets %></td>
+        <td><%= userdate.date_time %></td>
+        <td><%= userdate.details %></td>
+        <td>
+          <a href="/userdates/<%= userdate.id %>" class="btn btn-primary">
+            <i class="fa fa-search-plus"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/userdates/<%= userdate.id %>/edit" class="btn btn-warning">
+            <i class="fa fa-edit"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/delete_userdate/<%= userdate.id %>" class="btn btn-danger">
+            <i class="fa fa-trash-o"></i>
+          </a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

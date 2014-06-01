@@ -1,23 +1,24 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  root 'dates#index'
+  root 'userdates#index'
 
-  # Routes for the Date resource:
+
+  # Routes for the Userdate resource:
   # CREATE
-  get('/dates/new', { :controller => 'dates', :action => 'new' })
-  get('/create_date', { :controller => 'dates', :action => 'create' })
+  get('/userdates/new', { :controller => 'userdates', :action => 'new' })
+  get('/create_userdate', { :controller => 'userdates', :action => 'create' })
 
   # READ
-  get('/dates', { :controller => 'dates', :action => 'index' })
-  get('/dates/:id', { :controller => 'dates', :action => 'show' })
+  get('/userdates', { :controller => 'userdates', :action => 'index' })
+  get('/userdates/:id', { :controller => 'userdates', :action => 'show' })
 
   # UPDATE
-  get('/dates/:id/edit', { :controller => 'dates', :action => 'edit' })
-  get('/update_date/:id', { :controller => 'dates', :action => 'update' })
+  get('/userdates/:id/edit', { :controller => 'userdates', :action => 'edit' })
+  get('/update_userdate/:id', { :controller => 'userdates', :action => 'update' })
 
   # DELETE
-  get('/delete_date/:id', { :controller => 'dates', :action => 'destroy' })
+  get('/delete_userdate/:id', { :controller => 'userdates', :action => 'destroy' })
   #------------------------------
 
   # Routes for the Match resource:

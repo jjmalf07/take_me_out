@@ -1,6 +1,6 @@
-class CreateDates < ActiveRecord::Migration
+class CreateUserdates < ActiveRecord::Migration
   def change
-    create_table :dates do |t|
+    create_table :userdates do |t|
       t.string :interest
       t.string :preference
       t.integer :age_range

@@ -1,9 +1,9 @@
 <div class="page-header">
-  <h1>Add Date</h1>
+  <h1>Add Userdate</h1>
 </div>
 
-<% if @date.errors.any? %>
-  <% @date.errors.full_messages.each do |message| %>
+<% if @userdate.errors.any? %>
+  <% @userdate.errors.full_messages.each do |message| %>
     <div class="alert alert-dismissable alert-danger">
       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
       <%= message %>
@@ -12,14 +12,14 @@
 <% end %>
 
 
-<form action="/create_date" class="form-horizontal">
+<form action="/create_userdate" class="form-horizontal">
   <!-- Label and input for interest -->
   <div class="form-group">
     <label for="interest" class="col-sm-2 control-label">
       Interest
     </label>
     <div class="col-sm-10">
-      <input type="text" id="interest" name="interest" placeholder="Interest" class="form-control" value="<%= @date.interest %>">
+      <input type="text" id="interest" name="interest" placeholder="Interest" class="form-control" value="<%= @userdate.interest %>">
     </div>
   </div>
 
@@ -29,7 +29,7 @@
       Preference
     </label>
     <div class="col-sm-10">
-      <input type="text" id="preference" name="preference" placeholder="Preference" class="form-control" value="<%= @date.preference %>">
+      <input type="text" id="preference" name="preference" placeholder="Preference" class="form-control" value="<%= @userdate.preference %>">
     </div>
   </div>
 
@@ -39,7 +39,7 @@
       Age range
     </label>
     <div class="col-sm-10">
-      <input type="text" id="age_range" name="age_range" placeholder="Age range" class="form-control" value="<%= @date.age_range %>">
+      <input type="text" id="age_range" name="age_range" placeholder="Age range" class="form-control" value="<%= @userdate.age_range %>">
     </div>
   </div>
 
@@ -49,7 +49,7 @@
       User
     </label>
     <div class="col-sm-10">
-      <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @date.user_id %>">
+      <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @userdate.user_id %>">
     </div>
   </div>
 
@@ -59,7 +59,7 @@
       Event
     </label>
     <div class="col-sm-10">
-      <input type="text" id="event_id" name="event_id" placeholder="Event" class="form-control" value="<%= @date.event_id %>">
+      <input type="text" id="event_id" name="event_id" placeholder="Event" class="form-control" value="<%= @userdate.event_id %>">
     </div>
   </div>
 
@@ -69,7 +69,7 @@
       Price
     </label>
     <div class="col-sm-10">
-      <input type="text" id="price" name="price" placeholder="Price" class="form-control" value="<%= @date.price %>">
+      <input type="text" id="price" name="price" placeholder="Price" class="form-control" value="<%= @userdate.price %>">
     </div>
   </div>
 
@@ -79,7 +79,7 @@
       Number tickets
     </label>
     <div class="col-sm-10">
-      <input type="text" id="number_tickets" name="number_tickets" placeholder="Number tickets" class="form-control" value="<%= @date.number_tickets %>">
+      <input type="text" id="number_tickets" name="number_tickets" placeholder="Number tickets" class="form-control" value="<%= @userdate.number_tickets %>">
     </div>
   </div>
 
@@ -89,7 +89,7 @@
       Date time
     </label>
     <div class="col-sm-10">
-      <input type="text" id="date_time" name="date_time" placeholder="Date time" class="form-control" value="<%= @date.date_time %>">
+      <input type="text" id="date_time" name="date_time" placeholder="Date time" class="form-control" value="<%= @userdate.date_time %>">
     </div>
   </div>
 
@@ -99,13 +99,13 @@
       Details
     </label>
     <div class="col-sm-10">
-      <textarea id="details" name="details" placeholder="Details" class="form-control" rows="3"><%= @date.details %></textarea>
+      <textarea id="details" name="details" placeholder="Details" class="form-control" rows="3"><%= @userdate.details %></textarea>
     </div>
   </div>
 
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <input type="submit" value="Create Date" class="btn btn-primary">
+      <input type="submit" value="Create Userdate" class="btn btn-primary">
     </div>
   </div>
 </form>

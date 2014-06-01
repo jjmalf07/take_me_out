@@ -1,4 +1,4 @@
-class Date < ActiveRecord::Base
+class Userdate < ActiveRecord::Base
   belongs_to :event
   belongs_to :user
   has_many :matches
