@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h1>Edit Userdate #<%= @userdate.id %></h1>
+  <h1>Edit Date #<%= @userdate.id %></h1>
 </div>
 
 <% if @userdate.errors.any? %>
@@ -11,14 +11,20 @@
   <% end %>
 <% end %>
 
-<form action="/update_userdate/<%= @userdate.id %>" class="form-horizontal">
+
+<form action="/create_userdate" class="form-horizontal">
   <!-- Label and input for interest -->
   <div class="form-group">
     <label for="interest" class="col-sm-2 control-label">
       Interest
     </label>
     <div class="col-sm-10">
-      <input type="text" id="interest" name="interest" placeholder="Interest" class="form-control" value="<%= @userdate.interest %>">
+      <select type="text" id="interest" name="interest" placeholder="Interest" class="form-control" value="<%= @userdate.interest %>">
+        <option>Relationship</option>
+        <option>Casual Dating</option>
+        <option>Let's Have Some Fun ;)</option>
+        <option>Meet New Friends</option>
+      </select>
     </div>
   </div>
 
@@ -28,7 +34,11 @@
       Preference
     </label>
     <div class="col-sm-10">
-      <input type="text" id="preference" name="preference" placeholder="Preference" class="form-control" value="<%= @userdate.preference %>">
+      <select type="text" id="preference" name="preference" placeholder="Preference" class="form-control" value="<%= @userdate.preference %>">
+        <option>Men</option>
+        <option>Women</option>
+        <option>Either</option>
+      </select>
     </div>
   </div>
 
@@ -44,21 +54,18 @@
 
   <!-- Label and input for user_id -->
   <div class="form-group">
-    <label for="user_id" class="col-sm-2 control-label">
-      User
-    </label>
     <div class="col-sm-10">
-      <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @userdate.user_id %>">
+      <input type="hidden" id="user_id" name="user_id" placeholder="<%= @userdate.user_id %>" class="form-control" value="<%= @userdate.user_id %>">
     </div>
   </div>
 
   <!-- Label and input for event_id -->
   <div class="form-group">
     <label for="event_id" class="col-sm-2 control-label">
-      Event
+      Event Name
     </label>
     <div class="col-sm-10">
-      <input type="text" id="event_id" name="event_id" placeholder="Event" class="form-control" value="<%= @userdate.event_id %>">
+      <input type="text" id="event_id" name="event_id" placeholder="Game, concert, show, etc." class="form-control" value="<%= @userdate.event_id %>">
     </div>
   </div>
 
@@ -68,43 +75,43 @@
       Price
     </label>
     <div class="col-sm-10">
-      <input type="text" id="price" name="price" placeholder="Price" class="form-control" value="<%= @userdate.price %>">
+      <input type="text" id="price" name="price" placeholder="If it's on you, then say free" class="form-control" value="<%= @userdate.price %>">
     </div>
   </div>
 
   <!-- Label and input for number_tickets -->
   <div class="form-group">
     <label for="number_tickets" class="col-sm-2 control-label">
-      Number tickets
+      Number of tickets
     </label>
     <div class="col-sm-10">
-      <input type="text" id="number_tickets" name="number_tickets" placeholder="Number tickets" class="form-control" value="<%= @userdate.number_tickets %>">
+      <input type="text" id="number_tickets" name="number_tickets" placeholder="How many tickets are available (for group events)?" class="form-control" value="<%= @userdate.number_tickets %>">
     </div>
   </div>
 
   <!-- Label and input for date_time -->
   <div class="form-group">
     <label for="date_time" class="col-sm-2 control-label">
-      Date time
+      Date & Time
     </label>
     <div class="col-sm-10">
-      <input type="text" id="date_time" name="date_time" placeholder="Date time" class="form-control" value="<%= @userdate.date_time %>">
+      <input type="datetime" id="date_time" name="date_time" placeholder="What day & time should you meet?" class="form-control" value="<%= @userdate.date_time %>">
     </div>
   </div>
 
   <!-- Label and input for details -->
   <div class="form-group">
     <label for="details" class="col-sm-2 control-label">
-      Details
+      Date Details
     </label>
     <div class="col-sm-10">
-      <textarea id="details" name="details" placeholder="Details" class="form-control" rows="3"><%= @userdate.details %></textarea>
+      <textarea id="details" name="details" placeholder="Date details, plans, meetup spot, etc." class="form-control" rows="3"><%= @userdate.details %></textarea>
     </div>
   </div>
 
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <input type="submit" value="Update Userdate" class="btn btn-primary">
+      <input type="submit" value="Save Edits" class="btn btn-primary">
     </div>
   </div>
 </form>

@@ -3,10 +3,10 @@ class CreateUserdates < ActiveRecord::Migration
     create_table :userdates do |t|
       t.string :interest
       t.string :preference
-      t.integer :age_range
+      t.string :age_range
       t.integer :user_id
       t.integer :event_id
-      t.integer :price
+      t.string :price
       t.integer :number_tickets
       t.datetime :date_time
       t.text :details

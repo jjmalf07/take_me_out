@@ -48,7 +48,7 @@ class UserdatesController < ApplicationController
     @userdate.details = params[:details]
 
     if @userdate.save
-      redirect_to "/userdates", :notice => "Userdate updated successfully."
+      redirect_to "/userdates", :notice => "Date updated successfully."
     else
       render 'edit'
     end
@@ -59,6 +59,6 @@ class UserdatesController < ApplicationController
 
     @userdate.destroy
 
-    redirect_to "/userdates", :notice => "Userdate deleted."
+    redirect_to "/userdates", :notice => "Date deleted successfully."
   end
 end

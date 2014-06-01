@@ -1,20 +1,20 @@
 <div class="page-header">
-  <h1>Userdates</h1>
+  <h1>Dates</h1>
 </div>
 
-<p><a href="/userdates/new" class="btn btn-primary">Add a New Userdate</a></p>
+<p><a href="/userdates/new" class="btn btn-primary">Got Tickets? Post Your Date</a></p>
 
 <table class="table table-hover">
   <thead>
     <tr>
+      <th>Event</th>
+      <th>User</th>
       <th>Interest</th>
       <th>Preference</th>
       <th>Age range</th>
-      <th>User</th>
-      <th>Event</th>
       <th>Price</th>
       <th>Number tickets</th>
-      <th>Date time</th>
+      <th>Date/Time</th>
       <th>Details</th>
       <th></th>
       <th></th>
@@ -25,11 +25,11 @@
   <tbody>
     <% @userdates.each do |userdate| %>
       <tr>
+        <td><%= userdate.event_id %></td>
+        <td><%= userdate.user_id %></td>
         <td><%= userdate.interest %></td>
         <td><%= userdate.preference %></td>
         <td><%= userdate.age_range %></td>
-        <td><%= userdate.user_id %></td>
-        <td><%= userdate.event_id %></td>
         <td><%= userdate.price %></td>
         <td><%= userdate.number_tickets %></td>
         <td><%= userdate.date_time %></td>

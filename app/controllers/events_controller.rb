@@ -1,5 +1,14 @@
+require 'open-uri'
+require 'json'
+
 class EventsController < ApplicationController
   def index
+    url = "http://www.stubhub.com/listingCatalog/&wt=json"
+    raw_data = open(url).read
+    parsed_data = JSON.parse(raw_data)
+    @latitude = parsed_data["results"][0]["geometry"]["location"]["lat"]
+    @longitude = parsed_data["results"][0]["geometry"]["location"]["lng"]
+
     @events = Event.all
   end
 
