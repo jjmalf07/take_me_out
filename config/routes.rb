@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'userdates#index'
 
+  get('/userdates/search', { :controller => "userdates", :action => "search" })
 
   # Routes for the Userdate resource:
   # CREATE

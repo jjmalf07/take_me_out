@@ -5,6 +5,14 @@ class UserdatesController < ApplicationController
   # use Rack::Session::Cookie
   # use OmniAuth::Strategies::Developer
 
+  def search
+    @keyword = params[:keyword]
+
+    @userdates = Userdate.where("caption LIKE '%#{@keyword}%'")
+
+    render 'index'
+  end
+
   def index
     @userdates = Userdate.all
   end
