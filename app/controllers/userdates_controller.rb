@@ -1,4 +1,10 @@
+# require 'omniauth'
+
 class UserdatesController < ApplicationController
+
+  # use Rack::Session::Cookie
+  # use OmniAuth::Strategies::Developer
+
   def index
     @userdates = Userdate.all
   end

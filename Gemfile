@@ -4,6 +4,8 @@ gem 'starter_generators', :git => "git://github.com/rbetina/starter_generators.g
 
 gem 'devise'
 
+gem 'omniauth-facebook'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
 # Use sqlite3 as the database for Active Record

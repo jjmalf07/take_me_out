@@ -92,10 +92,13 @@
   <!-- Label and input for date_time -->
   <div class="form-group">
     <label for="date_time" class="col-sm-2 control-label">
-      Date & Time
+      Event Date
     </label>
     <div class="col-sm-10">
-      <input type="datetime" id="date_time" name="date_time" placeholder="What day & time should you meet?" class="form-control" value="<%= @userdate.date_time %>">
+      <input type="text" id="datepicker" name="date_time" placeholder="Event Date" class="form-control" value="<%= @userdate.date_time %>">
+      <script type="text/javascript">
+        jQuery('#datepicker').datepicker();
+      </script>
     </div>
   </div>
 
@@ -105,7 +108,7 @@
       Date Details
     </label>
     <div class="col-sm-10">
-      <textarea id="details" name="details" placeholder="Date details, plans, meetup spot, etc." class="form-control" rows="3"><%= @userdate.details %></textarea>
+      <textarea id="details" name="details" placeholder="Date details, plans, meetup spot & time, etc." class="form-control" rows="3"><%= @userdate.details %></textarea>
     </div>
   </div>
 
