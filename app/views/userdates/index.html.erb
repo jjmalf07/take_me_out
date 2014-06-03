@@ -11,10 +11,9 @@
       <th>User</th>
       <th>Interest</th>
       <th>Preference</th>
-      <th>Age range</th>
       <th>Price</th>
-      <th>Number tickets</th>
-      <th>Date/Time</th>
+      <th>Number of tickets</th>
+      <th>Date</th>
       <th>Details</th>
       <th></th>
       <th></th>
@@ -26,10 +25,9 @@
     <% @userdates.each do |userdate| %>
       <tr>
         <td><%= userdate.event_id %></td>
-        <td><%= userdate.user_id %></td>
+        <td><%= User.find(userdate.user_id).email %></td>
         <td><%= userdate.interest %></td>
         <td><%= userdate.preference %></td>
-        <td><%= userdate.age_range %></td>
         <td><%= userdate.price %></td>
         <td><%= userdate.number_tickets %></td>
         <td><%= userdate.date_time %></td>

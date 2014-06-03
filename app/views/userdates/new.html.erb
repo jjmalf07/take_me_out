@@ -43,14 +43,14 @@
   </div>
 
   <!-- Label and input for age_range -->
-  <div class="form-group">
+ <!--  <div class="form-group">
     <label for="age_range" class="col-sm-2 control-label">
       Age range
     </label>
     <div class="col-sm-10">
       <input type="text" id="age_range" name="age_range" placeholder="Age range" class="form-control" value="<%= @userdate.age_range %>">
     </div>
-  </div>
+  </div> -->
 
   <!-- Label and input for user_id -->
   <div class="form-group">
@@ -85,7 +85,7 @@
       Number of tickets
     </label>
     <div class="col-sm-10">
-      <input type="text" id="number_tickets" name="number_tickets" placeholder="How many tickets are available (for group events)?" class="form-control" value="<%= @userdate.number_tickets %>">
+      <input type="text" id="number_tickets" name="number_tickets" placeholder="List more than 1 for group dates or outtings" class="form-control" value="<%= @userdate.number_tickets %>">
     </div>
   </div>
 
@@ -108,7 +108,7 @@
       Date Details
     </label>
     <div class="col-sm-10">
-      <textarea id="details" name="details" placeholder="Date details, plans, meetup spot & time, etc." class="form-control" rows="3"><%= @userdate.details %></textarea>
+      <textarea id="details" name="details" placeholder="Date details, plans, meetup spot & time, seat location, etc." class="form-control" rows="3"><%= @userdate.details %></textarea>
     </div>
   </div>
 
