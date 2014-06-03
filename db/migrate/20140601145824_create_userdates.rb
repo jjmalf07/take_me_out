@@ -6,9 +6,9 @@ class CreateUserdates < ActiveRecord::Migration
       t.string :age_range
       t.integer :user_id
       t.integer :event_id
-      t.string :price
+      t.integer :price
       t.integer :number_tickets
-      t.string :date_time
+      t.datetime :date_time
       t.text :details
 
       t.timestamps

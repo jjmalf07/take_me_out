@@ -24,7 +24,7 @@
   <tbody>
     <% @userdates.each do |userdate| %>
       <tr>
-        <td><%= userdate.event_id %></td>
+        <td><%= userdate.eventname %></td>
         <td><%= User.find(userdate.user_id).email %></td>
         <td><%= userdate.interest %></td>
         <td><%= userdate.preference %></td>

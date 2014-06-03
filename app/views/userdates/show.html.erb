@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h1>Userdate #<%= @userdate.id %></h1>
+  <h1>Date #<%= @userdate.id %></h1>
 </div>
 
 <dl class="dl-horizontal">
@@ -9,14 +9,11 @@
   <dt>Preference</dt>
   <dd><%= @userdate.preference %></dd>
 
-  <dt>Age range</dt>
-  <dd><%= @userdate.age_range %></dd>
-
   <dt>User</dt>
-  <dd><%= @userdate.user_id %></dd>
+  <dd><%= @userdate.user.email %></dd>
 
   <dt>Event</dt>
-  <dd><%= @userdate.event_id %></dd>
+  <dd><%= @userdate.eventname %></dd>
 
   <dt>Price</dt>
   <dd><%= @userdate.price %></dd>
@@ -24,7 +21,7 @@
   <dt>Number tickets</dt>
   <dd><%= @userdate.number_tickets %></dd>
 
-  <dt>Date time</dt>
+  <dt>Date</dt>
   <dd><%= @userdate.date_time %></dd>
 
   <dt>Details</dt>
