@@ -13,12 +13,12 @@ class MatchesController < ApplicationController
 
   def create
     @match = Match.new
-    @match.date_id = params[:date_id]
-    @match.user_id = params[:user_id]
+    @match.userdate_id = params[:userdate_id]
+    @match.user_id = current_user.id
     @match.accepted = params[:accepted]
 
     if @match.save
-      redirect_to "/matches", :notice => "Match created successfully."
+      redirect_to "/userdates", :notice => "Match created successfully."
     else
       render 'new'
     end
@@ -31,12 +31,12 @@ class MatchesController < ApplicationController
   def update
     @match = Match.find(params[:id])
 
-    @match.date_id = params[:date_id]
-    @match.user_id = params[:user_id]
+    @match.userdate_id = params[:date_id]
+    @match.user_id = current_user.id
     @match.accepted = params[:accepted]
 
     if @match.save
-      redirect_to "/matches", :notice => "Match updated successfully."
+      redirect_to "/userdates", :notice => "Match updated successfully."
     else
       render 'edit'
     end
@@ -47,6 +47,10 @@ class MatchesController < ApplicationController
 
     @match.destroy
 
-    redirect_to "/matches", :notice => "Match deleted."
+    redirect_to :back, :notice => "Match deleted."
+  end
+
+  def mymatches
+    @mymatches = current_user.matches
   end
 end

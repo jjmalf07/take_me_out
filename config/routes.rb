@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   get('/userdates/search', { :controller => "userdates", :action => "search" })
 
+  get('/my_dates', { :controller => 'userdates', :action => 'mydates' })
+  get('/my_matches', { :controller => 'matches', :action => 'mymatches' })
+
   # Routes for the Userdate resource:
   # CREATE
   get('/userdates/new', { :controller => 'userdates', :action => 'new' })

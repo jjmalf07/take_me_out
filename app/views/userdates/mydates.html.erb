@@ -1,8 +1,8 @@
 <div class="page-header">
-  <h1>Dates</h1>
+  <h1>My Dates</h1>
 </div>
 
-<p><a href="/userdates/new" class="btn btn-primary">Got Tickets? Post Your Date</a></p>
+<p><a href="/userdates/new" class="btn btn-primary">Got Tickets? Post a New Date</a></p>
 
 <table class="table table-hover">
   <thead>
@@ -22,7 +22,7 @@
   </thead>
 
   <tbody>
-    <% @userdates.each do |userdate| %>
+    <% @mydates.each do |userdate| %>
       <tr>
         <td><%= userdate.eventname %></td>
         <td><%= User.find(userdate.user_id).email %></td>
@@ -32,17 +32,6 @@
         <td><%= userdate.number_tickets %></td>
         <td><%= userdate.date_time %></td>
         <td><%= userdate.details %></td>
-        <td>
-          <% if current_user.match_userdates.include?(userdate) %>
-            <% fav = Match.find_by({ :user_id => current_user.id, :userdate.id => userdate.id }) %>
-            <a href="/delete_match/<% fav.id %>" class="btn btn-info">
-              <i class="fa fa-heart"></i>
-            </a>
-          <% else %>
-            <a href="/create_match?userdate_id=<% userdate.id %>" class="btn btn-info">
-              <i class="fa fa-heart-o"></i>
-            </a>
-          <% end %>
           <td>
           <a href="/userdates/<%= userdate.id %>" class="btn btn-primary">
             <i class="fa fa-search-plus"></i>
@@ -62,4 +51,3 @@
     <% end %>
   </tbody>
 </table>
-

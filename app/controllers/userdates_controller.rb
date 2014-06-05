@@ -75,4 +75,9 @@ class UserdatesController < ApplicationController
 
     redirect_to "/userdates", :notice => "Date deleted successfully."
   end
+
+  def mydates
+    @mydates = current_user.userdates
+  end
+
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140603012404) do
+ActiveRecord::Schema.define(version: 20140605002128) do
 
   create_table "dates", force: true do |t|
     t.string   "interest"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20140603012404) do
   end
 
   create_table "matches", force: true do |t|
-    t.integer  "date_id"
+    t.integer  "userdate_id"
     t.integer  "user_id"
     t.boolean  "accepted"
     t.datetime "created_at"
