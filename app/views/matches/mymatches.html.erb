@@ -2,49 +2,38 @@
   <h1>My Matches</h1>
 </div>
 
+<p><a href="/userdates/new" class="btn btn-primary">Got Tickets? Post Your Date</a></p>
+
+<p> <%= link_to "Back", :back, :class => "btn btn-default" %> </p>
+
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>Event</th>
+      <th>Date</th>
       <th>User</th>
-      <th>Interest</th>
-      <th>Preference</th>
       <th>Price</th>
-      <th>Number of tickets</th>
+      <th>Number of Tickets</th>
       <th>Date</th>
       <th>Details</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Accepted?</th>
     </tr>
   </thead>
 
   <tbody>
     <% @mymatches.each do |match| %>
       <tr>
-        <td><%= Userdate.find(match.user_id).eventname %></td>
-        <td><%= User.find(match.user_id).email %></td>
-        <td><%= match.interest %></td>
-        <td><%= match.preference %></td>
-        <td><%= match.price %></td>
-        <td><%= match.number_tickets %></td>
-        <td><%= match.date_time %></td>
-        <td><%= match.details %></td>
-          <td>
-          <a href="/userdates/<%= userdate.id %>" class="btn btn-primary">
+        <td><%= match.userdate.eventname %></td>
+        <td><%= User.find(match.userdate.user_id).email %></td>
+        <td><%= match.userdate.price %></td>
+        <td><%= match.userdate.number_tickets %></td>
+        <td><%= match.userdate.date_time %></td>
+        <td><%= match.userdate.details %></td>
+        <td><%= match.accepted %></td>
+        <td>
+          <a href="/userdates/<%= match.userdate.id %>" class="btn btn-primary">
             <i class="fa fa-search-plus"></i>
           </a>
-          </td>
-          <% if userdate.user_id == current_user.id %>
-            <td>
-            <a href="/userdates/<%= userdate.id %>/edit" class="btn btn-warning">
-            <i class="fa fa-edit"></i>
-            </a>
-           </td>
-          <td>
-            <%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, "/delete_userdate/#{userdate.id}", data: {confirm: 'Are you sure you want to delete your date?' }, :class => "btn btn-danger", :remote => true  %>
-          </td>
-        <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>

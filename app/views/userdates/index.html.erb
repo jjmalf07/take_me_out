@@ -34,12 +34,12 @@
         <td><%= userdate.details %></td>
         <td>
           <% if current_user.match_userdates.include?(userdate) %>
-            <% fav = Match.find_by({ :user_id => current_user.id, :userdate.id => userdate.id }) %>
-            <a href="/delete_match/<% fav.id %>" class="btn btn-info">
+            <% fav = Match.find_by({ :user_id => current_user.id, :userdate_id => userdate.id }) %>
+            <a href="/delete_match/<%= fav.id %>" class="btn btn-info">
               <i class="fa fa-heart"></i>
             </a>
           <% else %>
-            <a href="/create_match?userdate_id=<% userdate.id %>" class="btn btn-info">
+            <a href="/create_match?userdate_id=<%= userdate.id %>" class="btn btn-info">
               <i class="fa fa-heart-o"></i>
             </a>
           <% end %>

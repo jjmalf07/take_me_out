@@ -13,7 +13,17 @@
 
 
 <form action="/update_userdate/<%= @userdate.id %>" class="form-horizontal">>
-  <!-- Label and input for interest -->
+  <!-- Label and input for eventname -->
+  <div class="form-group">
+    <label for="eventname" class="col-sm-2 control-label">
+      Event Name
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="eventname" name="eventname" placeholder="Game, concert, show, etc." class="form-control" value="<%= @userdate.eventname %>">
+    </div>
+  </div>
+
+   <!-- Label and input for interest -->
   <div class="form-group">
     <label for="interest" class="col-sm-2 control-label">
       Interest
@@ -56,16 +66,6 @@
   <div class="form-group">
     <div class="col-sm-10">
       <input type="hidden" id="user_id" name="user_id" placeholder="<%= @userdate.user_id %>" class="form-control" value="<%= @userdate.user_id %>">
-    </div>
-  </div>
-
-  <!-- Label and input for event_id -->
-  <div class="form-group">
-    <label for="eventname" class="col-sm-2 control-label">
-      Event Name
-    </label>
-    <div class="col-sm-10">
-      <input type="text" id="eventname" name="eventname" placeholder="Game, concert, show, etc." class="form-control" value="<%= @userdate.eventname %>">
     </div>
   </div>
 
@@ -118,3 +118,9 @@
     </div>
   </div>
 </form>
+
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= link_to "Back", :back, :class => "btn btn-default" %>
+    </div>
+</div>

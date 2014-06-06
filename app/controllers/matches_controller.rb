@@ -1,6 +1,7 @@
 class MatchesController < ApplicationController
   def index
     @matches = Match.all
+    @userdates = Userdate.all
   end
 
   def show
@@ -31,7 +32,7 @@ class MatchesController < ApplicationController
   def update
     @match = Match.find(params[:id])
 
-    @match.userdate_id = params[:date_id]
+    @match.userdate_id = params[:userdate_id]
     @match.user_id = current_user.id
     @match.accepted = params[:accepted]
 

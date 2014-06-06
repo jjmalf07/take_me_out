@@ -27,6 +27,7 @@ class UserdatesController < ApplicationController
 
   def create
     @userdate = Userdate.new
+    @userdate.eventname = params[:eventname]
     @userdate.interest = params[:interest]
     @userdate.preference = params[:preference]
     @userdate.age_range = params[:age_range]
@@ -34,7 +35,7 @@ class UserdatesController < ApplicationController
     @userdate.event_id = params[:event_id]
     @userdate.price = params[:price]
     @userdate.number_tickets = params[:number_tickets]
-    @userdate.date_time = params[:date_time]
+    @userdate.date_time = @userdate.date_time = Date.strptime(params[:date_time], "%m/%d/%Y")
     @userdate.details = params[:details]
 
     if @userdate.save
@@ -50,15 +51,15 @@ class UserdatesController < ApplicationController
 
   def update
     @userdate = Userdate.find(params[:id])
-
+    @userdate.eventname = params[:eventname]
     @userdate.interest = params[:interest]
     @userdate.preference = params[:preference]
     @userdate.age_range = params[:age_range]
-    @userdate.user_id = params[:user_id]
+    @userdate.user_id = current_user.id
     @userdate.event_id = params[:event_id]
     @userdate.price = params[:price]
     @userdate.number_tickets = params[:number_tickets]
-    @userdate.date_time = params[:date_time]
+    @userdate.date_time = @userdate.date_time = Date.strptime(params[:date_time], "%m/%d/%Y")
     @userdate.details = params[:details]
 
     if @userdate.save
