@@ -81,4 +81,8 @@ class UserdatesController < ApplicationController
     @mydates = current_user.userdates
   end
 
+  def home
+
+  end
+
 end
